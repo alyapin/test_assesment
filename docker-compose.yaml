@@ -1,0 +1,56 @@
+# version: '3.8'
+
+services:
+  postgres:
+    container_name: postgres
+    image: postgres:16
+    command:
+      - "postgres"
+      - "-c"
+      - "config_file=/etc/postgresql.conf"
+    ports:
+      - "5432:5432"
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      # PGDATA: "/var/lib/postgresql/data/pgdata"
+    volumes:
+      # - ./liquibase:/liquibase  # Mount directory for Liquibase scripts
+      - ./sql:/docker-entrypoint-initdb.d
+      # - pgdata:/var/lib/postgresql/data
+      - ./postgresql.conf:/etc/postgresql.conf:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 2
+      start_period: 10s
+    restart: unless-stopped
+    # Related to swarm deploying, not affecting when using docker-compose up or docker-compose run
+    # deploy:
+    #   resources:
+    #     limits:
+    #       cpus: '1'
+    #       memory: 2G
+
+
+  python_app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on:
+      - postgres
+    environment:
+      DATABASE_URL: postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@postgres:5432/${POSTGRES_DB}
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_HOST: postgres
+    volumes:
+      - ./data:/app/data  # Mount the local 'data' directory to '/app/data' in the container
+      - ./src:/app/src  # Mount the local scripts directory to '/app/scripts' in the container
+    # command: ["./wait_for_pg.sh", "postgres", "python3", "src/fill_clients_and_cars.py",  "python3", "src/fil_payments"]
+    command: bash -c "./wait_for_pg.sh postgres && python3 src/fill_clients_and_cars.py && python3 src/fill_payments.py"
+# volumes:
+#   pgdata:

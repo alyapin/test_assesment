@@ -1,0 +1,51 @@
+brand,model,year,rent_price,color
+Toyota,Corolla,2019,80,Red
+Honda,Civic,2020,85,Blue
+Ford,F-150,2021,120,Black
+Chevrolet,Silverado,2018,110,Silver
+Nissan,Altima,2020,90,Gray
+BMW,3 Series,2022,150,White
+Mercedes-Benz,E-Class,2021,140,Black
+Audi,A4,2023,160,Blue
+Volkswagen,Golf,2019,95,Gray
+Tesla,Model S,2022,200,Red
+Toyota,Camry,2020,85,Silver
+Honda,Accord,2021,95,White
+Ford,Explorer,2019,125,Blue
+Chevrolet,Malibu,2018,100,Red
+Nissan,Rogue,2020,105,Gray
+BMW,5 Series,2021,170,Black
+Mercedes-Benz,S-Class,2022,180,White
+Audi,Q5,2019,130,Silver
+Volkswagen,Passat,2020,110,Blue
+Tesla,Model 3,2023,220,Red
+Toyota,Rav4,2021,90,Gray
+Honda,CR-V,2020,100,Black
+Ford,Escape,2018,115,Silver
+Chevrolet,Equinox,2019,105,Blue
+Nissan,Pathfinder,2022,135,White
+BMW,X3,2020,160,Red
+Mercedes-Benz,GLC,2021,150,Gray
+Audi,A6,2019,140,Black
+Volkswagen,Tiguan,2018,120,Blue
+Tesla,Model X,2021,230,Silver
+Toyota,Highlander,2022,95,Red
+Honda,Pilot,2020,110,White
+Ford,Edge,2019,125,Black
+Chevrolet,Traverse,2018,115,Gray
+Nissan,Murano,2021,130,Blue
+BMW,X5,2022,180,Silver
+Mercedes-Benz,GLE,2019,170,Red
+Audi,Q7,2020,150,White
+Volkswagen,Atlas,2021,135,Black
+Tesla,Model Y,2018,240,Blue
+Toyota,Tacoma,2019,105,Silver
+Honda,Ridgeline,2020,115,Red
+Ford,Ranger,2021,120,Gray
+Chevrolet,Colorado,2022,125,Black
+Nissan,Titan,2019,110,Blue
+BMW,M3,2020,180,Silver
+Mercedes-Benz,AMG GT,2021,190,Red
+Audi,RS6 Avant,2022,200,Gray
+Volkswagen,Amarok,2019,140,Black
+Tesla,Cybertruck,2020,250,Blue
