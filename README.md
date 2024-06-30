@@ -2,7 +2,7 @@
 - [Database set up](#database-set-up)
     - [Prerequisites](#prerequisites)
     - [Create and populate database](#create-and-populate-database)
-- [Visualisation](#visualisation)
+- [Visualization](#visualization)
     - [Superset set up](#superset-set-up)
     - [Dashboard](#dashboard)
 - [ER diagram](#er-diagram)
@@ -19,7 +19,7 @@ Simple run:
 ```
 docker-compose up -d
 ```
-## Visualisation 
+## Visualization 
 #### Superset set up
 Clone superset repository
 ```
@@ -34,6 +34,7 @@ docker compose -f docker-compose-image-tag.yml up
 ```
 
 After finishing, superset ui should be available on http://localhost:8088
+
 Log in with the default username and password:
 ```
 username: admin
