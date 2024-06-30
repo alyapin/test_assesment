@@ -52,6 +52,7 @@ password: admin
 
 ![Clients with Highest Total Spend](img/clients_with_highest_spend.png)
 
+**All related to dashboard queries in dashboard/queries.sql file** 
 
 ## ER diagram
 ![ER diagram](img/er_diagram.png)
